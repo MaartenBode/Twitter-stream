@@ -1,0 +1,10 @@
+html {
+	background-color:white;
+	font-family: arial, sans-serif;
+	color:black;
+}
+p {
+	background-color: #eaeaea;
+	border-bottom: solid 2px #1d1d1d;
+	padding:10px;
+}
