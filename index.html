@@ -1,19 +1,30 @@
 <!doctype HTML>
 <html>
 	<head>
-		<title>Twitter stream</title>
-		<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+		<title>Paris Twitter</title>
+		<script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<style>
+		html {
+			background-color:white;
+			font-family: arial, sans-serif;
+			color:black;
+		}
+		p {
+			background-color: #eaeaea;
+			border-bottom: solid 2px #1d1d1d;
+			padding:10px;
+		}
+		</style>
 		<script>
 			var socket = io.connect('http://localhost:8080');
-			socket.on('enter keyword here', function(tweet){
+			socket.on('stream', function(tweet){
 				$('#container').prepend('<p>'+tweet+'</p>');
 			});
 		</script>
   	</head>
   	<body>
-  		<h1>Twitter stream</h1>
+  		<h1>#Paris stream</h1>
   		<div id="container"></div>
   	</body>
 </html>

@@ -8,21 +8,21 @@ var express = require('express')
 server.listen(8080);
 
 app.get('/', function (req, res) {
-res.sendfile(__dirname + '/index.html');
+res.sendFile(__dirname + '/index.html');
 });
 
-var watchList = ['example'];
+var watchList = ['paris'];
  var T = new Twit({
-    consumer_key:         ' '
-  , consumer_secret:      ' '
-  , access_token:         ' '
-  , access_token_secret:  ' '
+    consumer_key:         ''
+  , consumer_secret:      ''
+  , access_token:         ''
+  , access_token_secret:  ''
 })
 
 io.sockets.on('connection', function (socket) {
-  console.log('Connected');
-  var stream = T.stream('statuses/filter', { track: watchList })
-  stream.on('tweet', function (tweet) {
-  io.sockets.emit('stream',tweet.text);
-  });
+    console.log('Connected');
+    var stream = T.stream('statuses/filter', { track: watchList })
+    stream.on('tweet', function (tweet) {
+        io.sockets.emit('stream',tweet.text);
+    });
 });
