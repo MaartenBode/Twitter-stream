@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "express": "^4.14.0",
+    "right-pad": "^1.0.1",
     "socket.io": "^1.7.2",
     "twit": "^2.2.5"
   },
